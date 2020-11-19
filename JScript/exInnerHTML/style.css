@@ -1,0 +1,12 @@
+body, p {
+    background-color: aqua;
+    padding: 0;
+    margin: 0;
+    font: century;
+}
+
+.p1{
+    color: red;
+}
+
+/**criar css com os dockings corretos**/
