@@ -1,0 +1,49 @@
+/** Estudo Grid e Flexbox **/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+    background: whitesmoke;
+    color: white;
+}
+
+header{
+    background: black;
+    font: century;
+    grid-area: header;
+
+}
+
+main{
+    background: purple;
+    font: century;
+    grid-area: main;
+
+}
+
+aside{
+    background: blue;
+    font: century;
+    grid-area: aside;
+
+
+}
+
+footer{
+    background: green;
+    font: century;
+    grid-area: footer;
+
+}
+
+.container{
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 20vh 70vh 10vh;
+
+    grid-template-areas: "header header" "main aside" "footer footer";
+}
+
+.
