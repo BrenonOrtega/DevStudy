@@ -1,8 +1,11 @@
-body, p {
+html, body {
     background-color: aqua;
     padding: 0;
     margin: 0;
     font: century;
+    box-sizing: border-box;
+    color:black;
+
 }
 
 .p1{
@@ -10,3 +13,52 @@ body, p {
 }
 
 /**criar css com os dockings corretos**/
+
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 20vh 55vh 20vh;
+    grid-template-areas: "a a" "b c" "d d";
+}
+
+header{
+    grid-area: a;
+    background-color: rgb(145, 145, 145);
+}
+
+main{
+    grid-area: b;
+    background-color: rgb(72, 144, 211);
+    transition-duration: 0.3s;
+}
+
+main:hover{
+    background-color: rgb(72, 0, 211);
+}
+
+aside{
+    grid-area: c;
+    background-color: rgb(72, 0, 211);
+}
+footer{
+    grid-area: d;
+    background-color: rgb(72, 144, 0);
+}
+
+.button{
+    display: block;
+    margin: 10px;
+    align-content: center;
+    background-color: rgba(31, 123, 228, 0.877);
+    font: 1em century;
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+.button:hover{
+    border-color: white;
+    background-color: red;
+    color: white;
+}
