@@ -8,8 +8,11 @@ html, body {
 
 }
 
-.p1{
-    color: red;
+p1{
+    color: white;
+    font: century bold;
+    grid-area: c ;
+
 }
 
 /**criar css com os dockings corretos**/
@@ -24,7 +27,16 @@ html, body {
 header{
     grid-area: a;
     background-color: rgb(145, 145, 145);
+    
 }
+
+.headgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-area: "a1 a2 a3 a4" "b1 b2 b3 b4" "c1 c2 c3 c4f";
+}
+
 
 main{
     grid-area: b;
