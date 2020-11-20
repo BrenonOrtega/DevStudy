@@ -8,18 +8,30 @@ html, body {
 
 }
 p{
+    padding: 10px 15px;
     float: left
     grid-area: b1;
+    border-style: dashed;
+    border-color: black
+
 }
 p1{
     color: white;
     font: century bold;
-    grid-area: c1;
+    grid-area: d2;
+    border-style: dashed;
+    border-color: black;
 
 }
 
 /**criar css com os dockings corretos**/
+.bloco {
+    display:block;
+    border-style: initial;
+    border-radius: 2px;
+    border-color: yellow;
 
+}
 .container {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -27,9 +39,6 @@ p1{
     grid-template-areas: "a a" "b c" "d d";
 }
 
-.bloco {
-    display: ;
-}
 header{
     grid-area: a1 ;
     background-color: rgb(145, 145, 145);
@@ -38,9 +47,9 @@ header{
 
 .headgrid {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows: 30px 30px 30px;
-    grid-template-areas: "a1 b1" "g1 c1" "d1 d1";
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-areas: "a1 b1 b1" "c1 d1 d2" "e1 f1 f2";
     grid-area: a;
     grid-gap: 25px;
 }
@@ -65,7 +74,7 @@ footer{
     background-color: rgb(72, 144, 0);
 }
 
-.button{
+button{
     display: block;
     margin: 10px;
     align-content: center;
@@ -77,12 +86,12 @@ footer{
     transition-duration: 0.4s;
 }
 
-.button:hover{
+button:hover{
     border-color: white;
     background-color: red;
     color: white;
 }
 
 .button1{
-    grid-area: b1;
+    grid-area: d2;
 }
