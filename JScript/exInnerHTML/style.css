@@ -7,11 +7,14 @@ html, body {
     color:black;
 
 }
-
+p{
+    float: left
+    grid-area: b1;
+}
 p1{
     color: white;
     font: century bold;
-    grid-area: c ;
+    grid-area: c1;
 
 }
 
@@ -24,17 +27,22 @@ p1{
     grid-template-areas: "a a" "b c" "d d";
 }
 
+.bloco {
+    display: ;
+}
 header{
-    grid-area: a;
+    grid-area: a1 ;
     background-color: rgb(145, 145, 145);
     
 }
 
 .headgrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr) ;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-area: "a1 a2 a3 a4" "b1 b2 b3 b4" "c1 c2 c3 c4f";
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 30px 30px 30px;
+    grid-template-areas: "a1 b1" "g1 c1" "d1 d1";
+    grid-area: a;
+    grid-gap: 25px;
 }
 
 
@@ -73,4 +81,8 @@ footer{
     border-color: white;
     background-color: red;
     color: white;
+}
+
+.button1{
+    grid-area: b1;
 }
