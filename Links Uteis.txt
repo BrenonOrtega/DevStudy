@@ -1,0 +1,5 @@
+Tutoriais de JavaScript:
+
+http://jennifermadden.com/javascript/index.html
+
+https://www.w3schools.com/js/default.asp
