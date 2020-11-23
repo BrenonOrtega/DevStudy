@@ -1,0 +1,16 @@
+body{
+    font:century;
+    color: white;
+    border: dashed blue 10px 15px;
+    background:rgba(110,110,110,0.8) fixed;
+}
+
+h{
+    border-style: dashed;
+    color: yellow;
+}
+
+p{
+    font: verdana;
+    color: white;
+}
