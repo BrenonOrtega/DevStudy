@@ -3,3 +3,9 @@ Tutoriais de JavaScript:
 http://jennifermadden.com/javascript/index.html
 
 https://www.w3schools.com/js/default.asp
+
+https://www.codecademy.com/learn/introduction-to-javascript
+
+Link para estudos variados: 
+
+https://programathor.com.br/blog/recursos-gratuitos-para-programadores/
