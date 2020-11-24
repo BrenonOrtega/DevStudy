@@ -5,7 +5,10 @@ http://jennifermadden.com/javascript/index.html
 https://www.w3schools.com/js/default.asp
 
 https://www.codecademy.com/learn/introduction-to-javascript
+https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-functions/cheatsheet
 
 Link para estudos variados: 
 
-https://programathor.com.br/blog/recursos-gratuitos-para-programadores/
+https://programathor.com.br/blog/recursos-gratuitos-para-programadores/ 
+
+....
