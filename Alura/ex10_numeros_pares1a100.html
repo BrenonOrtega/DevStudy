@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Javascript - Alura</title> 
+</head>
+<body>
+    <h3>Todos os números pares de 1 a 100. </h3>
+    <script>
+
+        const mostra=(frase, qtdLinhas)=>{
+            document.write(frase);
+            pulaLinha(qtdLinhas);
+        }
+
+        const pulaLinha=(qtdLinhas)=>{
+            if (qtdLinhas){
+                for(let i=0; i<qtdLinhas; i++){
+                    document.write("<br>");
+                }
+            }
+            else{
+                document.write("<br>");
+            } 
+        }
+
+   
+    const repita=(inicio, limite, incremento, msg)=>{
+        for(i=inicio; i<=limite; i+=incremento){
+            if((i!==37) && (i!==33)){
+                mostra(msg + i, 2);
+            }
+        }
+    }
+
+    repita(2, 100, 2, `Este é um número par:`);
+      
+    </script>      
+</body>
+</html>
