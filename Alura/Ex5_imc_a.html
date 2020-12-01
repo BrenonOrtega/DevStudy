@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Javascript - Alura</title> 
+</head>
+<body>
+    <h3>Calculando o IMC (Índice de Massa Corporal)</h3>
+    <script>
+
+        const mostra=(frase, qtdLinhas)=>{
+            document.write(frase);
+            pulaLinha(qtdLinhas);
+        }
+
+        const pulaLinha=(qtdLinhas)=>{
+            if (qtdLinhas){
+                for(let i=0; i<qtdLinhas; i++){
+                    document.write("<br>");
+                }
+            }
+            else{
+                document.write("<br>");
+            } 
+        }
+
+        const calculaImc = (peso, altura)=>{
+            return peso/altura**2;
+        }
+
+        const nome = prompt("informe seu nome.");
+        const pesoInf = parseFloat(prompt(`${nome} informe seu peso.`));
+        const alturaInf = parseFloat(prompt(`${nome} Informe sua altura`));
+
+        const imc = calculaImc(pesoInf, alturaInf);
+
+
+        mostra(`${nome} seu IMC calculado, pesando ${pesoInf} kg e medindo ${alturaInf} é igual a ${imc}.);
+    </script>      
+</body>
+</html>
