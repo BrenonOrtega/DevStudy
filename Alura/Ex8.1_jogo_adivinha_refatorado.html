@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Javascript - Alura</title> 
+</head>
+<body>
+    <h3>Jogo de Adivinhação.</h3>
+    <script>
+
+        const mostra=(frase, qtdLinhas)=>{
+            document.write(frase);
+            pulaLinha(qtdLinhas);
+        }
+
+        const pulaLinha=(qtdLinhas)=>{
+            if (qtdLinhas){
+                for(let i=0; i<qtdLinhas; i++){
+                    document.write("<br>");
+                }
+            }
+            else{
+                document.write("<br>");
+            } 
+        }
+
+        const sorteia = n =>Math.round(Math.random()*n);
+        
+
+        const numeroPensado = sorteia(Number(prompt("Insira o número max possível para o palpite.")));
+        console.log(numeroPensado)
+        const recebeChute=(tentativas)=> {
+            let i=0;
+            while(i<tentativas){
+            testaChute(Number(prompt("Qual o seu palpite?")), i);
+
+        }
+        const testaChute =(chute, tentativas)=>{
+            if (chute===numeroPensado){
+                mostra(`Você acertou o número!!`);
+                
+            }
+            else if(chute <numeroPensado){
+                mostra(`Seu palpite foi menor que o número que pensei!`);
+            }
+            else{
+                mostra(`Seu palpite foi maior que o número que pensei!`);
+            }
+        }
+        
+        //terminar código.
+        recebeChute(3);
+
+    </script>      
+</body>
+</html>

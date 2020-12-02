@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Javascript - Alura</title> 
+</head>
+<body>
+    <h3>Média de Idade de uma Família. </h3>
+    <script>
+
+        const mostra=(frase, qtdLinhas)=>{
+            document.write(frase);
+            pulaLinha(qtdLinhas);
+        }
+
+        const pulaLinha=(qtdLinhas)=>{
+            if (qtdLinhas){
+                for(let i=0; i<qtdLinhas; i++){
+                    document.write("<br>");
+                }
+            }
+            else{
+                document.write("<br>");
+            } 
+        }
+
+        const totalFamiliares = parseInt(prompt("Digite o número de familiares."));
+        let i=1;
+        let somaIdades=0;
+
+        while(i<=totalFamiliares){
+            const idade = parseInt(prompt(`Digite a idade do ${i}º familiar.`));
+            somaIdades+=idade;
+            i++;
+        }
+
+        alert(`A média da idade dos ${totalFamiliares} familiares é igual a ${somaIdades/totalFamiliares}.`);
+
+
+      
+    </script>      
+</body>
+</html>
