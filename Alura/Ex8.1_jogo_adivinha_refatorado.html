@@ -25,32 +25,35 @@
             } 
         }
 
+        //Função de Sorteio com valor max dado pelo usuário.
         const sorteia = n =>Math.round(Math.random()*n);
-        
 
+        //recebe valor max dado pelo usuário e usa na função.
         const numeroPensado = sorteia(Number(prompt("Insira o número max possível para o palpite.")));
-        console.log(numeroPensado)
-        const recebeChute=(tentativas)=> {
-            let i=0;
-            while(i<tentativas){
-            testaChute(Number(prompt("Qual o seu palpite?")), i);
 
-        }
-        const testaChute =(chute, tentativas)=>{
-            if (chute===numeroPensado){
-                mostra(`Você acertou o número!!`);
+        //loga o número no console.
+        console.log(numeroPensado);
+
+        const adivinhacao=(maxTentativas)=> {
+            let i = 0;
+
+            while (i<maxTentativas){
+                let chute = parseInt(prompt("Qual o seu palpite?"));
+                console.log("erro!");
+                if (chute==numeroPensado){
+                    mostra(`Você acertou o número!!`);
+                    break;    
+                }else{
+                    alert(`Você errou o número!`);
+                    i++;
+                }
+
                 
             }
-            else if(chute <numeroPensado){
-                mostra(`Seu palpite foi menor que o número que pensei!`);
-            }
-            else{
-                mostra(`Seu palpite foi maior que o número que pensei!`);
-            }
+
         }
-        
-        //terminar código.
-        recebeChute(3);
+
+        adivinhacao(3);
 
     </script>      
 </body>

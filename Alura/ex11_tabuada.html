@@ -25,18 +25,11 @@
             } 
         }
 
-   
-    const repita=(inicio, limite, incremento, msg)=>{
-        for(i=inicio; i<=limite; i+=incremento){
-            if((i!==37) && (i!==33)){
-                mostra(msg + i, 2);
-            }
-        }
+   for(let multiplicador=1; multiplicador<=10; multiplicador++){
+        mostra(`7 x ${multiplicador}=`+ 7*multiplicador);
     }
 
-    repita(2, 100, 2, `Este é um número par:`);
-    mostra("Fim",2);
-      
+    mostra(fim,2);
     </script>      
 </body>
 </html>

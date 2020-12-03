@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinha mais - javascript e HTML</title>
+</head>
+<body>
+    <h2>Adivinhe o número!</h2>
+    <input id="input1">
+    <input id="input2">
+    <input id="input3">
+    <button>Compare com o meu segredo</button>
+    
+    <script>
+        let button = document.querySelector("button");
+        const segredo = Math.round(Math.random()*10);
+        const input1 = document.getElementById("input1");
+        const input2 = document.getElementById("input2");
+        const input3 = document.getElementById("input3");
+
+        const testaPalpite=()=>{
+            (input.value == segredo)? alert("Você acertou!"): alert("Você errou!"); 
+            input.value = ""; input.focus();
+        }
+
+        button.onclick = testaPalpite;
+
+    </script>
+</body>
+</html>

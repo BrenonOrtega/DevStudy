@@ -6,7 +6,7 @@
     <title>Aprendendo Javascript - Alura</title> 
 </head>
 <body>
-    <h3>Todos os números pares de 1 a 100. </h3>
+    <h3>Jogo de Adivinhação.</h3>
     <script>
 
         const mostra=(frase, qtdLinhas)=>{
@@ -25,18 +25,16 @@
             } 
         }
 
-   
-    const repita=(inicio, limite, incremento, msg)=>{
-        for(i=inicio; i<=limite; i+=incremento){
-            if((i!==37) && (i!==33)){
-                mostra(msg + i, 2);
+        let qtdLinhas = 3;
+        let qtdEstrelas = 10;
+        for(let j=0; j<qtdLinhas; j++){
+            for(let i=0; i<qtdEstrelas; i++){
+                document.write("*");
             }
+            mostra(``);
         }
-    }
-
-    repita(2, 100, 2, `Este é um número par:`);
-    mostra("Fim",2);
       
+
     </script>      
 </body>
 </html>
