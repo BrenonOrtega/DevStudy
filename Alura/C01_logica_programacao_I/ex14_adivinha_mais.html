@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinha mais - javascript e HTML</title>
+</head>
+<body>
+    <h2>Adivinhe o número!</h2>
+    <input/>
+    <button>Compare com o meu segredo</button>
+    
+    <script>
+        function sorteia(){return Math.round(Math.random()*10);}
+
+        function sorteiaNumero(qtd){
+            var segredos=[];
+            console.log(segredos);
+            console.log(segredos.length);
+            var numero = 0;
+            while (numero <= qtd){
+                let numeroAleatorio=sorteia();
+                let repetiu=false
+                for (let i=0; i<segredos.length; i++){
+                    if ((segredos[i])==numeroAleatorio){
+                        repetiu = true;
+                        break;
+                    }
+                    if(repetiu == false) {
+                        segredos.push(numeroAleatorio);
+                        numero++;
+                        if (numero > 50 ){break;}
+                    }
+                 }
+                 console.log (numero + "and" + qtd);
+                
+            }
+            return segredos;
+        }
+
+        let input = document.querySelector("input");
+        let segredo = sorteiaNumero(2);
+
+        console.log(segredo);
+
+        function testaPalpite(){
+            let resultado;
+            for (let i=0; i<segredo.length; i++){
+                if(input.value == segredo[i]){
+                    resultado = true;
+                    break;
+                }else{ 
+                    resultado = false; 
+                }           
+            } 
+            resultado? alert("Você acertou!"):alert("Você errou!");     
+            input.value="";
+            input.focus();
+        }
+        
+        let button = document.querySelector("button");
+        button.onclick = testaPalpite;
+    </script>
+</body>
+</html>

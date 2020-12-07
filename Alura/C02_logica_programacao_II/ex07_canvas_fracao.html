@@ -15,30 +15,47 @@
         let pincel= tela.getContext("2d");
 
         const desenhaQuadrado = (x,y, largura, cor)=>{
+            let altura=150;
             pincel.fillStyle = cor;
             pincel.strokeStyle = "black";
-            pincel.lineWidth = "5";
-            pincel.fillRect(x,y, largura, 400);
-            pincel.strokeRect(x+largura,y,1,400);
+            pincel.lineWidth = "3";
+            pincel.fillRect(x,y, largura, altura);
+            pincel.strokeRect(x, y,largura, altura);
         }
 
         const qtdQuadrados = (qtd, cor, largura) =>{
             let i =0;
             let x = 0;
             while(i<qtd){
-                if (x==0){
+               /* if (x==0){
                     desenhaQuadrado(0,0,largura,cor);
                     x+=largura;
-                }else{
+                }else{*/
                     desenhaQuadrado(x,0,largura,cor);
                     x+=largura;
-                }
+                //}
                 i++
             }
         }
-
-        qtdQuadrados(7, "Green",20);
         
+        const geraFracao=(numerador, denominador, corFracao) =>{
+            let totalQuadrados = numerador+denominador;
+            qtdQuadrados(denominador,"white", tela.width/totalQuadrados);
+            qtdQuadrados(numerador, corFracao, tela.width/totalQuadrados);
+        }
+
+        const fracaoAleatoria=()=>{
+            let numMenorDen = false;
+            let numAleatorio = 0;
+            let denAleatorio = 0;
+            while(numMenorDen == false ){   
+                if (numAleatorio == 0){numAleatorio = Math.round(Math.random()*9);}
+                if (denAleatorio == 0){Math.round(Math.random()*9);}
+                if (numAleatorio<denAleatorio){numMenorDen=true;}  
+            }
+
+        geraFracao(2,7,"green");
+
 
     </script>
 </body>
