@@ -7,13 +7,14 @@
     <title>Fazendo Fração com Canvas</title>
 </head>
 <body>
-    <h1>Qual é essa fração?</h1>
+    <h1>Qual é esta fração?</h1>
     <canvas width="600"height="400"></canvas>
     
     <script>
         let tela=document.querySelector("canvas");
         let pincel= tela.getContext("2d");
 
+        //Desenha um quadrado.
         const desenhaQuadrado = (x,y, largura, cor)=>{
             let altura=150;
             pincel.fillStyle = cor;
@@ -23,14 +24,11 @@
             pincel.strokeRect(x, y,largura, altura);
         }
 
+        //utiliza a função desenhaQuadrado para desenhar a qtd específicada de quadrados.
         const qtdQuadrados = (qtd, cor, largura) =>{
             let i =0;
             let x = 0;
             while(i<qtd){
-               /* if (x==0){
-                    desenhaQuadrado(0,0,largura,cor);
-                    x+=largura;
-                }else{*/
                     desenhaQuadrado(x,0,largura,cor);
                     x+=largura;
                 //}
@@ -38,25 +36,39 @@
             }
         }
         
+        //gera a fração na tela utilizando os valores dos parametros e a cor.
         const geraFracao=(numerador, denominador, corFracao) =>{
             let totalQuadrados = numerador+denominador;
             qtdQuadrados(denominador,"white", tela.width/totalQuadrados);
             qtdQuadrados(numerador, corFracao, tela.width/totalQuadrados);
         }
-
+        
+        //Gera valores aleatorios para o numerador e o denominador da fração a ser mostrada.
         const fracaoAleatoria=()=>{
             let numMenorDen = false;
             let numAleatorio = 0;
             let denAleatorio = 0;
             while(numMenorDen == false ){   
-                if (numAleatorio == 0){numAleatorio = Math.round(Math.random()*9);}
-                if (denAleatorio == 0){Math.round(Math.random()*9);}
-                if (numAleatorio<denAleatorio){numMenorDen=true;}  
+                if (numAleatorio == 0 || numAleatorio>=denAleatorio){numAleatorio = Math.round(Math.random()*9);}
+                if (denAleatorio < 2){denAleatorio = Math.round(Math.random()*9);}
+                if (numAleatorio<denAleatorio && numAleatorio != 0){numMenorDen=true;};
+                console.log(numMenorDen + " " + numAleatorio + " " + denAleatorio);
             }
+            let fracao=[];
+            fracao.push(numAleatorio);
+            fracao.push(denAleatorio);
 
-        geraFracao(2,7,"green");
+            return fracao;
+        }    
 
-
+        //recebe a matriz com os númeradores e denominadores retornados da função.
+        const fracao = fracaoAleatoria();
+        const num = fracao[0];
+        const den = fracao[1];
+        
+        
+        //utiliza os valores recebidos para gerar a função na tela.
+        geraFracao(num,den,"red");
     </script>
 </body>
 </html>
