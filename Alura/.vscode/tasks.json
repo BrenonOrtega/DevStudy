@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/aspNetCoreWebApp/ASPNETCore20-5fc8ba0d3a47d8344c2bac9a32edfbe177b35a9d/Aulas/Aula1/CasaDoCodigo/CasaDoCodigo.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/aspNetCoreWebApp/ASPNETCore20-5fc8ba0d3a47d8344c2bac9a32edfbe177b35a9d/Aulas/Aula1/CasaDoCodigo/CasaDoCodigo.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/aspNetCoreWebApp/ASPNETCore20-5fc8ba0d3a47d8344c2bac9a32edfbe177b35a9d/Aulas/Aula1/CasaDoCodigo/CasaDoCodigo.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
