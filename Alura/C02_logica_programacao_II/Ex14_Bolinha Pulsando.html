@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitulo 4 : Bolinha Pulsante.</title>
+    <canvas width = '600' height="400" id="canvas1"></canvas>
+</head>
+<body>
+    <script>
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+        const raioInicial = 20;
+        const raioMaximo = 30;
+        const corPadrao = "blue";
+        let x = raioInicial;
+        let crescimento = false;
+        pincel.fillStyle = 'lightgray';
+        pincel.fillRect(0, 0, 600, 400);
+
+        function desenhaCirculo(x, y, raio, cor) {
+            (cor == null)? pincel.fillStyle = corPadrao : pincel.fillStyle = cor;
+            console.log(cor);
+            pincel.fillStyle = cor;
+            pincel.beginPath();
+            pincel.arc(x, y, raio, 0, 2 * Math.PI);
+            pincel.fill();
+        }
+
+        function limpaTela() {
+
+            pincel.clearRect(0, 0, 600, 400);
+        }
+
+        function atualizaTela(){
+            limpaTela();
+            desenhaCirculo(150, 150, x, 'green');
+            crescimento? (x--, x <= raioInicial? crescimento = false : null) : (x++, x >= raioMaximo? crescimento = true : null)          
+        }
+
+        setInterval(atualizaTela, 50)
+    
+    </script>
+</body>
+</html>

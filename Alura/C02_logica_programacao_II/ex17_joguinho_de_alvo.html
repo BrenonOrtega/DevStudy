@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ot-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cap5 - Jogo do Alvo que se Movimentação.</title>
+</head>
+<body>
+<canvas width="600" height="400"></canvas>
+    <script>
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        let xRandom ;
+        let yRandom ;
+        var raio = 10;
+
+        pincel.fillStyle = 'lightgray';
+        pincel.fillRect(0, 0, 600, 400);
+
+        function desenhaCirculo(x, y, raio, cor) {
+            cor == null? pincel.fillStyle = 'blue' : pincel.fillStyle = cor;
+            pincel.beginPath();
+            pincel.arc(x, y, raio, 0, 2 * Math.PI);
+            pincel.fill();
+        }
+
+        function limpaTela() {
+            pincel.clearRect(0, 0, 600, 400);
+        }
+
+        function desenhaAlvo(x, y){
+            desenhaCirculo(x, y, raio+20, "red");
+            desenhaCirculo(x, y, raio+10, "white");
+            desenhaCirculo(x, y, raio, "red");
+        }
+
+        function geraPosicao (maximo){
+            return Math.floor(Math.random()*maximo);
+        }
+
+        function moveAlvo(evento){
+            limpaTela()
+            xRandom = geraPosicao(600);
+            yRandom = geraPosicao(400);
+            desenhaAlvo(xRandom, yRandom); 
+        }
+
+        function gravaClick(evento)
+        {
+            let x = evento.pageX - tela.offsetLeft;
+            let y = evento.pageY - tela.offsetTop;
+            
+            if ((x > xRandom - raio) && (x < xRandom + raio) && (y > yRandom - raio) && ( y < yRandom + raio)){
+                alert("Acertou!");
+            }
+        }
+        
+        let coordenadasAlvo = setInterval(moveAlvo, 700);
+        tela.onclick = gravaClick;
+    </script>
+    
+</body>
+</html>

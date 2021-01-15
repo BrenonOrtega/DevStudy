@@ -1,41 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang = "pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Nossa tela está viva, ela responde!</title>
-    <canvas id="canvas1" width="600" height="400"></canvas>
+    <canvas id = "canvas1" width = "600" height = "400"></canvas>
 </head>
 <body>
     <script>
         const canvas = document.querySelector("canvas#canvas1");
         const brush = canvas.getContext("2d");
 
-        brush.fillStyle = "grey";
-        brush.fillRect(0,0,600,400);
+        const cores = ["blue", "red", "green"];
+        let cliques = 0;
+        let radius = 10;
 
-        const desenhaCirculo = evento=>
+        brush.fillStyle = "grey";
+        brush.fillRect(0, 0, 600, 400);
+
+        const desenhaCirculo = evento =>
         {
             // usa as funções de retorno (callbacks) do evento canvas.onclick para preencher os dados da função.
-
-            //
             var x = evento.pageX-canvas.offsetLeft;
             var y = evento.pageY-canvas.offsetTop;
 
-            //Faz um círculo azul no ponto que o usuário clicou
-            brush.fillStyle = "blue";
-            brush.beginPath();
-            brush.arc(x, y, 5, 0, 2*3.14);
-            brush.fill();
+            let radiusInicial = 10;
+            let acrescimo = 10;
+            let descrescimo = 5;
 
+            radius >= 40? null : (
+            evento.shiftKey ? radius += acrescimo : null );
+            evento.altKey? (radius <= 10? radius = radiusInicial : radius -= decrescimo) : null;
+
+            //Faz um círculo azul no ponto que o usuário clicou
+            brush.fillStyle = cores[cliques];
+            brush.beginPath();
+            brush.arc(x, y, radius, 0, 2*3.14);
+            brush.fill();
             console.log(`A tela foi clicada em x,y=(${x};${y}) `);
         }
 
         const mudaCor = evento =>
         {   
             evento.preventDefault();
-            console.log(evento);
-            const cores = ["blue","red", "green"];
+            cliques < cores.length-1? cliques+=1 : cliques = 0;
+            console.log(`cores.length=${cores.length} & cliques = ${cliques}`);      
         }
 
         canvas.onclick = desenhaCirculo; 
