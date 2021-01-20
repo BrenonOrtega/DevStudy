@@ -13,8 +13,9 @@ def jogar():
     enforcado = False
 
     num_letras_palavra_secreta = len(palavra_secreta)
-    tentativas = len(palavra_secreta)
+    tentativas = 8
     segredo = []
+
     for i in range (num_letras_palavra_secreta):
         segredo.append("_")
 
@@ -33,15 +34,25 @@ def jogar():
                     acerto = True
                 index_letra += 1
 
-            print("jogando...")
         else:
             print("digite apenas uma única letra.")
 
         if acerto == False:
-            print("Menos uma tentativa")
-            
+            tentativas -= 1
 
-print("Fim do jogo")
+            if tentativas == 0:
+                enforcado = True
+                print("Acabaram suas tentativas.")
+            else:
+                print("Menos uma tentativa")
+        else:
+            for i in 
+                acertou = True
+                print("Voce Acertou a palavra!")
+
+        
+    print('fim do jogo!')
+
 
 if __name__ == "__main__":
     jogar()
