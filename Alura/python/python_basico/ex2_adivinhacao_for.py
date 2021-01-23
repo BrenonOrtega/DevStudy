@@ -2,10 +2,12 @@ import random
 
 def jogar():
     msg = "Bem vindo ao jogo de adivinhacao!"
-    msg_espacamento = "**************************************"
+    msg_instrucoes = "Neste jogo você deve adivinha qual é o número secreto!\nO numero muda a cada tentativa incorreta."
+    msg_espacamento = "********************************************************"
 
     print(msg_espacamento)
     print(msg)
+    print(msg_instrucoes)
     print(msg_espacamento)
     print("Selecione o nível de dificuldade:")
     dificuldade = int(input ("(1) Fácil | (2) Médio| (3) Dificil\n"))
@@ -24,7 +26,7 @@ def jogar():
         quit()
 
     rodada = 1
-    numero_maximo = 100
+    numero_maximo = 30
     pontos = 1000
 
     #Inicio do jogo
@@ -83,7 +85,6 @@ def jogar():
             except:
                 print("Por Favor digite um número!")
             
-        print (msg)
         print(msg_espacamento)
 
     print ("fim do jogo!")
