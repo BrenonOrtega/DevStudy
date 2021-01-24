@@ -6,3 +6,7 @@ https://www.freecodecamp.org/news/python-property-decorator/
 
 Getters and Setters in python:
 https://stackoverflow.com/questions/2627002/whats-the-pythonic-way-to-use-getters-and-setters
+
+Preventing creation of new atributes outside a class in python
+(Use of __slots__)
+https://stackoverflow.com/questions/3603502/prevent-creating-new-attributes-outside-init
