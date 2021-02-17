@@ -6,9 +6,21 @@ class UrlArgExtractor:
         else:
             raise LookupError('String Inválida!')
 
+    def __len__(self):
+        return len(self.url)
+
+    def __str__(self) -> str:
+        moeda_origem, moeda_destino, valor = self.arg_extract()
+        class_repr = f'''Moeda Origem: {moeda_origem}\nMoeda Destino: {moeda_destino}\nValor: {valor}'''
+        return class_repr
+
+    def __eq__(self, o: object) -> bool:
+        return self.url == o.url
+
     @staticmethod
     def is_url_valid(url):
-        return True if url else False
+        domain = 'https://www.bytebank.com.br'
+        return True if url and url.startswith(domain) else False
     
     def arg_extract(self):
         moeda_origem = self.get_moeda_origem()

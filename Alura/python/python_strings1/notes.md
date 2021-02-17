@@ -99,6 +99,58 @@ print(indice)
 5
 ```
 
+## REGEX em python
+Vimos nessa aula que nem todos os textos são tão simples de serem retirados de dentro dos textos utilizando o fatiamento de strings, mas além disso vimos também que com expressões regulares é possível retirar padrões de dentro de qualquer texto.
+
+Vamos identificar números de telefone dentro de um texto:
+
+```python
+padrao = "[0123456789][0123456789][0123456789][0123456789][-][0123456789][0123456789][0123456789][0123456789]"
+#Vamos testar esse padrão.
+
+texto =  "Meu número para contato é 2633-5723"
+retorno = re.search(padrao,texto)
+print(retorno.group())
+```
+
+É possível simplificar a representação do padrão utilizando intervalos de caracteres [0-9]
+
+```python
+padrao = "[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]
+```
+
+Podemos simplificar ainda mais utilizando quantificadores para os intervalos.
+
+```python
+padrao = "[0-9]{4}[-][0-9]{4}
+```
+
+Para deixar nosso padrão mais simples podemos retirar [-] e deixar somente -, pois essa é a única opção para essa posição.
+
+```python
+padrao = "[0-9]{4}-[0-9]{4}
+```
+
+Agora caso o número de telefone seja de um celular e possua um 9 na frente do número? Podemos dar opções para os quantificadores.
+
+padrao = "[0-9]{4,5}-[0-9]{4}
+
+Mas e se quisermos que o - seja opcional dentro da expressão regular? Uma forma de fazer isso é utilizando o operador '?'
+
+```python
+padrao = "[0-9]{4,5}-?[0-9]{4}
+```
+
+Aprendemos a criar expressões regulares para capturar padrões de string dentro de qualquer texto, utilizando os seguintes comandos:
+
+Grupos de caracteres: [0123456789];
+
+Intervalos de caracteres: [0-9];
+
+Quantificadores: {4}, {4,5} e ?;
+
+E os métodos re.search, re.findall e group()
+
 ## Para saber mais
 
 
@@ -111,6 +163,44 @@ Essa string pode ser divida em duas partes: "endereço"?"argumentos", sendo que 
 Vamos dar um zoom no lado dos argumentos da url: "nomeArgumento1"="valorArgumento1"&"nomeArgumento2"="valorArgumento2". Aqui nós percebemos que pode ser passado mais de 1 (um) argumento e que eles são separados pelo caractere especial “&”. Além disso o argumento possui um nome e um valor que são separados pelo caractere “=”.
 
 * [Para saber mais - capitulo 1](https://cursos.alura.com.br/course/python-manipulando-strings/task/52586)]
+
+## Para Saber Mais
+
+[python 3 - String Methods](https://cadernoscicomp.com.br/tutorial/introducao-a-programacao-em-python-3/funcoes-print-input-e-o-metodo-format/)
+
+O método format() serve para criar strings com chaves que serão substituídas por argumentos dentro do método format(). Veja o exemplo abaixo:
+
+```python
+texto = “{} é um anime excelente e já possui {} temporada”
+print(texto.format(“The Rising of shield Hero”,1))COPIAR CÓDIGO
+```
+
+Os campos substituídos estão sempre associados a parâmetros que podem ser nomeados ou não, vamos repetir o exemplo mas dessa vez nomeando os argumentos dentro das chaves e dentro do método format().
+
+```python
+texto = "{anime} é um anime excelente e já possui {temporada} temporada"
+print(texto.format(temporada=1,anime="The Rising of shield Hero"))
+```
+
+É possível utilizar o format para alinhar os textos e para determinar uma quantidade máxima de caracteres que podem ser exibidos. Veja a lista abaixo com alguns exemplos e seus resultados para a seguinte string: 
+
+texto = “Eu gosto de pizza de {}”.format(“Calabresa”).
+
+{0:>20} - Alinha a string à direita com 20 espaços em branco
+
+Resposta : Eu gosto de pizza de Calabresa
+
+{0:#>20} - Alinha a string à direita com 20 símbolos #
+
+Resposta : Eu gosto de pizza de ###########Calabresa
+
+{0:#^20} - A linha a string no centro de 20 símbolos #.
+
+Resposta : Eu gosto de pizza de #####Calabresa######
+
+{0:.5} - Imprime somente os 5 primeiros dígitos
+
+Resposta : Eu gosto de pizza de Calab
 
 #### Método ()
 
@@ -142,3 +232,5 @@ Vamos dar um zoom no lado dos argumentos da url: "nomeArgumento1"="valorArgument
 [DevFuria - O básico sobre string](http://devfuria.com.br/python/strings/)
 
 [Caelum - Python Orientação a objetos](https://www.caelum.com.br/apostila/apostila-python-orientacao-a-objetos.pdf)
+
+[Alura - Comparando Objetos no python](https://www.alura.com.br/artigos/como-comparar-objetos-no-python)

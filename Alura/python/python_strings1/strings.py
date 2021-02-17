@@ -1,11 +1,18 @@
+from re import error
 from UrlArgExtractor import UrlArgExtractor
 #   Desafio Capitulo1
-url = 'www.bytebank.com.br/cambio?valor=1500&moedaOrigem=real&moedaDestino=dolar'
+url = 'https://www.bytebank.com.br/cambio?moedaOrigem=real&moedaDestino=dolar&valor=1500'
 
-url_menor = 'cambio?moedaOrigem=moedaDestino&moedaDestino=dolar&valor=1500'
+url_menor = 'https://www.bytebank.com.br/cambio?moedaOrigem=moedaDestino&moedaDestino=dolar&valor=500'
 
-a = UrlArgExtractor(url_menor)
-moeda_origem, moeda_destino, valor = a.arg_extract()
-print('*' * 50)
+a = UrlArgExtractor(url)
+b = UrlArgExtractor(url_menor)
+""" moeda_origem, moeda_destino, valor = a.arg_extract()
+print('*' * 50,)
 print(moeda_origem, moeda_destino, valor)
-print('*' * 50)
+print('*' * 50, '\n')
+
+ """
+print(a)
+
+print (a == b)
